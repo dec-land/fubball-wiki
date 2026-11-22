@@ -155,3 +155,27 @@ h6 {
 	text-decoration: none;
 	opacity: 0.85;
 }
+
+@media (min-width: 50rem) {
+	:root[data-sidebar-hidden="true"] {
+		--sl-sidebar-width: 0px;
+	}
+
+	:root[data-sidebar-hidden="true"] .sidebar-pane {
+		display: none;
+	}
+}
+
+.hero .actions {
+	align-items: center;
+}
+
+@media (min-width: 36rem) {
+	.hero .actions {
+		flex-wrap: nowrap;
+	}
+
+	.hero .actions a {
+		white-space: nowrap;
+	}
+}

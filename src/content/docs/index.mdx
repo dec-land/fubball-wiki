@@ -1,17 +1,13 @@
 ---
 title: Fubball Wiki
 description: "Community maintained reference for Fubball: guides, season cadence, club lore, and observed match mechanics."
-template: splash
+tableOfContents: false
 hero:
   tagline: The community maintained record of Fubball. Pick a club, get your bets in, and document whatever happens on the pitch.
   actions:
     - text: What is Fubball?
       link: /guides/getting-started/
       icon: right-arrow
-    - text: Weekly Season Cycle
-      link: /guides/season-cycle/
-      icon: open-book
-      variant: minimal
     - text: How to Contribute
       link: /guides/contributing/
       icon: pencil
@@ -23,11 +19,6 @@ import { CardGrid, LinkCard } from "@astrojs/starlight/components";
 ## Start here
 
 <CardGrid>
-	<LinkCard
-		title="What is Fubball?"
-		description="The short introduction to the league, Pints, betting, and the Sunday A.G.M."
-		href="/guides/getting-started/"
-	/>
 	<LinkCard
 		title="Choosing a Club"
 		description="Compare club play styles, try the sorting quiz, or back an under supported terrace."
@@ -44,13 +35,18 @@ import { CardGrid, LinkCard } from "@astrojs/starlight/components";
 		href="/guides/betting/"
 	/>
 	<LinkCard
-		title="The Bar & The A.G.M."
-		description="Spend Pints behind the bar and vote on Directives and Club Demands every Sunday."
+		title="The Bar"
+		description="Spend Pints behind the counter on snacks, drinks, and off menu curiosities."
+		href="/guides/the-bar/"
+	/>
+	<LinkCard
+		title="The A.G.M."
+		description="Vote with Pints on league wide Directives and Club Demands every Sunday."
 		href="/guides/the-agm/"
 	/>
 	<LinkCard
-		title="Discord & Community"
-		description="Link Discord for club chat, check Big Dave's Briefing, or contribute to the wiki."
+		title="Discord"
+		description="Link Discord for club chat, match updates, and A.G.M. campaigning."
 		href="/guides/discord/"
 	/>
 </CardGrid>

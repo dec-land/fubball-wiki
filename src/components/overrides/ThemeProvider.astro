@@ -1,3 +1,8 @@
 <script is:inline>
 	document.documentElement.dataset.theme = "dark";
+	try {
+		if (localStorage.getItem("fubball-wiki-sidebar-hidden") === "true") {
+			document.documentElement.dataset.sidebarHidden = "true";
+		}
+	} catch {}
 </script>
