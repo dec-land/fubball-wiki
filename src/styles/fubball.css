@@ -12,7 +12,7 @@
 	--fubball-muted: #a3a3a3;
 	--fubball-accent: #e5e5e5;
 
-	--fubball-accent-fa: #d4a72c;
+	--fubball-accent-fa: #1eb854;
 	--fubball-accent-terrace: #38bdf8;
 	--fubball-accent-positive: #4ade80;
 	--fubball-accent-negative: #f87171;
@@ -111,7 +111,7 @@ h6 {
 	a[data-link-kind="fubball"]:focus-visible:not(
 		:where(.not-content *, .sl-anchor-link, .sl-link-card a)
 	) {
-	color: #facc15;
+	color: #4ade80;
 	text-decoration-color: currentColor;
 }
 
