@@ -1,0 +1,44 @@
+---
+title: How to Contribute
+description: How supporters can edit existing pages or add new club lore, match observations, and guides to the Fubball Wiki.
+---
+
+This wiki is maintained by Fubball supporters. You do not need to be a developer to edit a page or add what you have seen on the pitch.
+
+## Edit a page in your browser
+
+Every article has an **Edit this page** link at the bottom:
+
+1. Click **Edit this page** to open the `.mdx` source on GitHub.
+2. Sign in to GitHub (on your first edit, GitHub will fork the repository for you automatically).
+3. Make your edits and submit a pull request against `main`.
+
+Cloudflare Pages generates a live preview link on every pull request so reviewers can check your changes before merging.
+
+## Adding callouts
+
+You can highlight notices or terrace notes anywhere in a page using `<Infobox>` without needing an import statement:
+
+```mdx
+<Infobox variant="fa" title="F.A. Notice">
+	Official league ruling or administrative note.
+</Infobox>
+```
+
+Available variants: `fa`, `terrace`, `positive`, `negative`, and `neutral`.
+
+## Working locally
+
+For larger edits or adding multiple pages at once, clone [dec-land/fubball-wiki](https://github.com/dec-land/fubball-wiki) and run:
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Before opening a pull request, verify everything passes locally:
+
+```bash
+pnpm check
+pnpm build
+```

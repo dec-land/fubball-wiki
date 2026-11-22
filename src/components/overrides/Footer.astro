@@ -1,0 +1,61 @@
+---
+import Default from "@astrojs/starlight/components/Footer.astro";
+
+const { editUrl } = Astro.locals.starlightRoute;
+---
+
+<Default><slot /></Default>
+
+<div class="fubball-footer">
+	<div class="footer-inner">
+		<span>
+			Community maintained wiki for <a href="https://fubball.com">Fubball</a>.
+		</span>
+		<span class="footer-links">
+			{
+				editUrl && (
+					<>
+						<a href={editUrl.href}>Edit on GitHub</a>
+						<span aria-hidden="true">·</span>
+					</>
+				)
+			}
+			<a href="https://github.com/dec-land/fubball-wiki">GitHub</a>
+			<span aria-hidden="true">·</span>
+			<a href="/guides/contributing/">Contribute</a>
+		</span>
+	</div>
+</div>
+
+<style>
+	.fubball-footer {
+		margin-top: 3rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--sl-color-hairline);
+		font-size: 0.8125rem;
+		color: var(--sl-color-gray-3);
+	}
+
+	.footer-inner {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 0.75rem 1.5rem;
+	}
+
+	.footer-links {
+		display: inline-flex;
+		gap: 0.5rem;
+		align-items: center;
+	}
+
+	.fubball-footer a {
+		color: inherit;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+
+	.fubball-footer a:hover {
+		color: var(--sl-color-white);
+	}
+</style>

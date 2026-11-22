@@ -1,0 +1,73 @@
+---
+type Variant = "fa" | "terrace" | "positive" | "negative" | "neutral";
+
+interface Props {
+	variant?: Variant;
+	title?: string;
+}
+
+const { variant = "neutral", title } = Astro.props;
+---
+
+<aside class={`infobox infobox-${variant}`} role="note">
+	{title && <p class="infobox-title">{title}</p>}
+	<div class="infobox-body">
+		<slot />
+	</div>
+</aside>
+
+<style>
+	.infobox {
+		--infobox-accent: var(--sl-color-gray-3);
+		--infobox-bg: var(--sl-color-gray-7);
+
+		margin: 1.5rem 0;
+		padding: 1rem 1.25rem;
+		border-left: 3px solid var(--infobox-accent);
+		border-radius: 0 4px 4px 0;
+		background: var(--infobox-bg);
+		color: var(--sl-color-text);
+	}
+
+	.infobox-title {
+		margin: 0 0 0.5rem;
+		font-weight: 700;
+		font-size: 0.875rem;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var(--infobox-accent);
+	}
+
+	.infobox-body :global(:first-child) {
+		margin-top: 0;
+	}
+
+	.infobox-body :global(:last-child) {
+		margin-bottom: 0;
+	}
+
+	.infobox-fa {
+		--infobox-accent: var(--fubball-accent-fa);
+		--infobox-bg: color-mix(in srgb, var(--fubball-accent-fa) 10%, transparent);
+	}
+
+	.infobox-terrace {
+		--infobox-accent: var(--fubball-accent-terrace);
+		--infobox-bg: color-mix(in srgb, var(--fubball-accent-terrace) 10%, transparent);
+	}
+
+	.infobox-positive {
+		--infobox-accent: var(--fubball-accent-positive);
+		--infobox-bg: color-mix(in srgb, var(--fubball-accent-positive) 10%, transparent);
+	}
+
+	.infobox-negative {
+		--infobox-accent: var(--fubball-accent-negative);
+		--infobox-bg: color-mix(in srgb, var(--fubball-accent-negative) 10%, transparent);
+	}
+
+	.infobox-neutral {
+		--infobox-accent: var(--sl-color-gray-3);
+		--infobox-bg: var(--sl-color-gray-7);
+	}
+</style>

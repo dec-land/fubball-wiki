@@ -1,0 +1,45 @@
+---
+title: Fubball Wiki
+description: "Community maintained reference for Fubball: guides, season cadence, club lore, and observed match mechanics."
+template: splash
+hero:
+  tagline: The Community maintained record of Fubball. Pick a club, get your bets in, and document whatever happens on the pitch.
+  actions:
+    - text: What is Fubball?
+      link: /guides/getting-started/
+      icon: right-arrow
+    - text: Weekly Season Cycle
+      link: /guides/season-cycle/
+      icon: open-book
+      variant: minimal
+    - text: How to Contribute
+      link: /guides/contributing/
+      icon: pencil
+      variant: minimal
+---
+
+import { CardGrid, LinkCard } from "@astrojs/starlight/components";
+
+## Start here
+
+<CardGrid>
+	<LinkCard
+		title="What is Fubball?"
+		description="The short introduction to the league, Pints, betting, and Sunday Elections."
+		href="/guides/getting-started/"
+	/>
+	<LinkCard
+		title="Weekly Season Cycle"
+		description="How 1 hour maps to 1 in-game day across the 95-match regular season, playoffs, and Sunday Election."
+		href="/guides/season-cycle/"
+	/>
+	<LinkCard
+		title="How to Contribute"
+		description="Edit any page directly in GitHub to add club lore, observed incidents, and match notes."
+		href="/guides/contributing/"
+	/>
+</CardGrid>
+
+---
+
+*The Fubball Association acknowledges that this wiki is maintained by supporters. Observed accounts may vary from official match reports.*

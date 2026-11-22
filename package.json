@@ -1,0 +1,33 @@
+{
+	"name": "fubball-wiki",
+	"type": "module",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"check": "astro check && biome check .",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"format": "biome format --write ."
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.9.12",
+		"@astrojs/sitemap": "^3.7.6",
+		"@astrojs/starlight": "^0.38.5",
+		"@astrojs/starlight-tailwind": "^5.0.0",
+		"@tailwindcss/vite": "^4.3.5",
+		"acorn": "^8.19.0",
+		"astro": "^6.4.8",
+		"remark-gfm": "^4.0.1",
+		"sharp": "^0.34.5",
+		"tailwindcss": "^4.3.5",
+		"typescript": "^6.0.3",
+		"unist-util-visit": "^5.2.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.6.8"
+	}
+}
