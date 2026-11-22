@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wiki.fubball.com/sitemap.xml
+Sitemap: https://wiki.fubball.online/sitemap.xml

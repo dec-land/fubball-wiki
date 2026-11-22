@@ -4,6 +4,8 @@ import { visit } from "unist-util-visit";
 /** @type {Record<string, string>} */
 const COMPONENTS = {
 	Infobox: 'import Infobox from "@/components/mdx/Infobox.astro";',
+	SupportersList:
+		'import SupportersList from "@/components/mdx/SupportersList.astro";',
 };
 
 export default function remarkInjectMdxComponents() {

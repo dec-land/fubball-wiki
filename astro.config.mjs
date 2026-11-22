@@ -5,6 +5,7 @@ import starlight from "@astrojs/starlight";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import remarkGfm from "remark-gfm";
+import rehypeClassifyLinks from "./src/lib/rehype-classify-links.mjs";
 import remarkInjectMdxComponents from "./src/lib/remark-inject-mdx-components.mjs";
 
 /** @returns {import('astro').AstroIntegration} */
@@ -26,13 +27,14 @@ const renameSitemapIndex = () => ({
 });
 
 export default defineConfig({
-	site: "https://wiki.fubball.com",
+	site: "https://wiki.fubball.online",
 	output: "static",
 	vite: {
 		plugins: [tailwindcss()],
 	},
 	markdown: {
 		remarkPlugins: [remarkGfm, remarkInjectMdxComponents],
+		rehypePlugins: [rehypeClassifyLinks],
 	},
 	integrations: [
 		starlight({
@@ -58,10 +60,32 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
-					label: "Guides",
+					label: "Getting Started",
 					items: [
 						{ label: "What is Fubball?", slug: "guides/getting-started" },
+						{ label: "Choosing a Club", slug: "guides/choosing-a-team" },
 						{ label: "Weekly Season Cycle", slug: "guides/season-cycle" },
+						{ label: "Schedule", slug: "guides/schedule" },
+						{ label: "Playoffs", slug: "guides/playoffs" },
+					],
+				},
+				{
+					label: "Site Features",
+					items: [
+						{ label: "Pints", slug: "guides/pints" },
+						{ label: "Betting", slug: "guides/betting" },
+						{ label: "The Bar", slug: "guides/the-bar" },
+						{ label: "The A.G.M.", slug: "guides/the-agm" },
+						{ label: "Big Dave's Briefing", slug: "guides/big-daves-briefing" },
+						{ label: "The Chalkboard", slug: "guides/chalkboard" },
+						{ label: "Achievements", slug: "guides/achievements" },
+					],
+				},
+				{
+					label: "Community & Support",
+					items: [
+						{ label: "Discord", slug: "guides/discord" },
+						{ label: "Supporting Fubball", slug: "guides/supporting-fubball" },
 						{ label: "How to Contribute", slug: "guides/contributing" },
 					],
 				},

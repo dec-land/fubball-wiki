@@ -1,0 +1,87 @@
+---
+interface Props {
+	endpoint?: string;
+}
+
+const { endpoint = "https://fubball.online/api/supporters" } = Astro.props;
+---
+
+<div class="supporters-wall" data-supporters-endpoint={endpoint}>
+	<p class="supporters-status" data-supporters-status>
+		Loading supporters...
+	</p>
+	<ul class="supporters-list" data-supporters-list hidden></ul>
+</div>
+
+<script>
+	const containers = document.querySelectorAll<HTMLElement>("[data-supporters-endpoint]");
+
+	for (const container of containers) {
+		const endpoint = container.dataset.supportersEndpoint;
+		const statusEl = container.querySelector<HTMLElement>("[data-supporters-status]");
+		const listEl = container.querySelector<HTMLUListElement>("[data-supporters-list]");
+
+		if (!endpoint || !statusEl || !listEl) continue;
+
+		fetch(endpoint, { headers: { Accept: "application/json" } })
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error(`HTTP ${response.status}`);
+				}
+				return response.json();
+			})
+			.then((payload: { supporters?: Array<{ name?: string; profileUrl?: string }> }) => {
+				const supporters = Array.isArray(payload?.supporters) ? payload.supporters : [];
+
+				if (supporters.length === 0) {
+					statusEl.textContent = "No League Supporters listed yet.";
+					return;
+				}
+
+				const fragment = document.createDocumentFragment();
+				for (const supporter of supporters) {
+					if (!supporter.name || !supporter.profileUrl) continue;
+					const item = document.createElement("li");
+					const link = document.createElement("a");
+					link.href = supporter.profileUrl;
+					link.textContent = supporter.name;
+					link.dataset.linkKind = "fubball";
+					link.target = "_blank";
+					link.rel = "noopener noreferrer";
+					item.appendChild(link);
+					fragment.appendChild(item);
+				}
+
+				listEl.replaceChildren(fragment);
+				statusEl.hidden = true;
+				listEl.hidden = false;
+			})
+			.catch(() => {
+				statusEl.textContent = "Could not load the supporter list right now.";
+			});
+	}
+</script>
+
+<style>
+	.supporters-wall {
+		margin-top: 1rem;
+	}
+
+	.supporters-status {
+		color: var(--sl-color-gray-3);
+		font-size: 0.9rem;
+	}
+
+	.supporters-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 1.25rem;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.supporters-list li {
+		margin: 0;
+	}
+</style>

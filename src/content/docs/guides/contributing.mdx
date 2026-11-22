@@ -1,6 +1,6 @@
 ---
 title: How to Contribute
-description: How supporters can edit existing pages or add new club lore, match observations, and guides to the Fubball Wiki.
+description: How supporters can edit existing pages, format internal and external links, and add new club lore or guides to the Fubball Wiki.
 ---
 
 This wiki is maintained by Fubball supporters. You do not need to be a developer to edit a page or add what you have seen on the pitch.
@@ -13,7 +13,25 @@ Every article has an **Edit this page** link at the bottom:
 2. Sign in to GitHub (on your first edit, GitHub will fork the repository for you automatically).
 3. Make your edits and submit a pull request against `main`.
 
-Cloudflare Pages generates a live preview link on every pull request so reviewers can check your changes before merging.
+## Links (internal vs. external)
+
+Write standard Markdown links everywhere. You do not need a custom component. The wiki styles each link automatically based on its URL:
+
+- **Internal wiki pages:** Use a path starting with `/` and ending with `/`, such as `[Pints](/guides/pints/)`. Internal links appear in terrace blue with a solid underline and open in the same tab.
+- **Fubball website pages:** Use the full `https://fubball.online/...` URL, such as `[The Bar](https://fubball.online/bar)`. Site links appear in F.A. gold with a dashed underline and `↗`, and open in a new tab.
+- **Other external sites:** Use the full URL, such as `[dec-land/fubball-wiki](https://github.com/dec-land/fubball-wiki)`. External links appear in light grey with a dashed underline and `↗`, and open in a new tab.
+
+```mdx
+Internal wiki link: [Weekly Season Cycle](/guides/season-cycle/)
+Fubball website link: [Live Schedule](https://fubball.online/schedule)
+Other external link: [Fubball Wiki on GitHub](https://github.com/dec-land/fubball-wiki)
+```
+
+## Writing guidelines
+
+- **No spoilers for unrevealed mechanics:** Document what has actually happened in the league. Leave locked features, hidden triggers, and future twists vague so supporters can discover them together.
+- **Terminology:** Always write **fubball** (never football or soccer), **Pints**, and **bets** (never wagers). Use British English (*pitch*, *fixtures*, *referee*, *dressing room*).
+- **Tone:** Keep prose clear and readable. Use `<Infobox variant="fa">` for official F.A. notices and `<Infobox variant="terrace">` for supporter asides.
 
 ## Adding callouts
 

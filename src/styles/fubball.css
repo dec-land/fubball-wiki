@@ -63,3 +63,95 @@ h5,
 h6 {
 	letter-spacing: -0.02em;
 }
+
+.sl-markdown-content
+	a:not(:where(.not-content *, .sl-anchor-link, .sl-link-card a)) {
+	color: var(--fubball-accent-terrace);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.22em;
+	text-decoration-color: color-mix(
+		in srgb,
+		var(--fubball-accent-terrace) 60%,
+		transparent
+	);
+	transition:
+		color 150ms ease,
+		text-decoration-color 150ms ease;
+}
+
+.sl-markdown-content
+	a:hover:not(:where(.not-content *, .sl-anchor-link, .sl-link-card a)),
+.sl-markdown-content
+	a:focus-visible:not(
+		:where(.not-content *, .sl-anchor-link, .sl-link-card a)
+	) {
+	color: #7dd3fc;
+	text-decoration-color: currentColor;
+}
+
+.sl-markdown-content
+	a[data-link-kind="fubball"]:not(
+		:where(.not-content *, .sl-anchor-link, .sl-link-card a)
+	) {
+	color: var(--fubball-accent-fa);
+	text-decoration-style: dashed;
+	text-decoration-color: color-mix(
+		in srgb,
+		var(--fubball-accent-fa) 65%,
+		transparent
+	);
+}
+
+.sl-markdown-content
+	a[data-link-kind="fubball"]:hover:not(
+		:where(.not-content *, .sl-anchor-link, .sl-link-card a)
+	),
+.sl-markdown-content
+	a[data-link-kind="fubball"]:focus-visible:not(
+		:where(.not-content *, .sl-anchor-link, .sl-link-card a)
+	) {
+	color: #facc15;
+	text-decoration-color: currentColor;
+}
+
+.sl-markdown-content
+	a[data-link-kind="external"]:not(
+		:where(.not-content *, .sl-anchor-link, .sl-link-card a)
+	) {
+	color: var(--sl-color-gray-2);
+	text-decoration-style: dashed;
+	text-decoration-color: color-mix(
+		in srgb,
+		var(--sl-color-gray-2) 55%,
+		transparent
+	);
+}
+
+.sl-markdown-content
+	a[data-link-kind="external"]:hover:not(
+		:where(.not-content *, .sl-anchor-link, .sl-link-card a)
+	),
+.sl-markdown-content
+	a[data-link-kind="external"]:focus-visible:not(
+		:where(.not-content *, .sl-anchor-link, .sl-link-card a)
+	) {
+	color: var(--sl-color-white);
+	text-decoration-color: currentColor;
+}
+
+.sl-markdown-content
+	a[data-link-kind="fubball"]:not(
+		:where(.not-content *, .sl-anchor-link, .sl-link-card a)
+	)::after,
+.sl-markdown-content
+	a[data-link-kind="external"]:not(
+		:where(.not-content *, .sl-anchor-link, .sl-link-card a)
+	)::after {
+	content: "\00a0↗";
+	display: inline-block;
+	font-size: 0.8em;
+	line-height: 1;
+	text-decoration: none;
+	opacity: 0.85;
+}

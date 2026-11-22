@@ -1,6 +1,6 @@
 # Fubball Wiki
 
-Community maintained wiki for [Fubball](https://fubball.com), published at [wiki.fubball.com](https://wiki.fubball.com). See [CONTRIBUTING.md](./CONTRIBUTING.md) or click **Edit this page** at the bottom of any article to open its `.mdx` source directly in GitHub's web editor.
+Community maintained wiki for [Fubball](https://fubball.online), published at [wiki.fubball.online](https://wiki.fubball.online). See [CONTRIBUTING.md](./CONTRIBUTING.md) or click **Edit this page** at the bottom of any article to open its `.mdx` source directly in GitHub's web editor.
 
 ## Stack
 
